@@ -40,11 +40,14 @@ to_record = [
 enter_press = [
     'UwU', 'OwO', '>w<', '-w-', ';w;',
     '^w^', 'òwó', 'ôwô', 'ÒwÓ', 'ÔwÔ',
-    'úwù', '>3<', '₍₍ (ง Ŏ౪Ŏ)ว ⁾⁾', '(⁄ ⁄•⁄ω⁄•⁄ ⁄)'
+    'úwù', '>3<', '₍₍ (ง Ŏ౪Ŏ)ว ⁾⁾', '(⁄ ⁄•⁄ω⁄•⁄ ⁄)',
+    '(*^ω^)', '(◕‿◕✿)', '(｡♥‿♥｡)', '(*≧ω≦*)', 
+    '(つ✧ω✧)つ', '(/^-^(^ ^*)/', '٩(｡•́‿•̀｡)۶', '(´｡• ᵕ •｡`)',
+    '(づ｡◕‿‿◕｡)づ', '(^._.^)ﾉ', '(￣ω￣;)', '(/^▽^)/',
+    '((╬ᴗ╬*)', '(>_<)>', '^･ｪ･^'
 ]
 
 dupe_set = False
-
 
 def on_press(key):
     global dupe_set
@@ -60,10 +63,10 @@ def on_press(key):
         keyname = 'w'
 
     if keyname == 'x' and not keyboard.is_pressed('ctrl'):
-        keyname = 'k'
+        keyname = 'ks'
 
     if keyname == 'c' and not keyboard.is_pressed('ctrl'):
-        keyname = 'k'
+        keyname = 'ch'
 
     if keyname == 'space':
         dupe_set = True
@@ -71,10 +74,6 @@ def on_press(key):
         if random.randint(1, 3) == 1:
             keyboard.write(keyname[0] + '-')
         dupe_set = False
-
-    if keyname == 'x' and not keyboard.is_pressed('ctrl'):
-        keyboard.write('k')
-        keyname = 's'
 
     pressed_key = keyname.lower()
     if keyname != pressed_key or keyboard.is_pressed('shift') or GetKeyState(VK_CAPITAL):
